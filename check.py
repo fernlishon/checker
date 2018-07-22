@@ -55,7 +55,7 @@ class Checker:
         return self._result
     
     def dumps(self):
-        file = open('F:\codes\pycodes\checker\errorNum.txt','w')
+        file = open('errorNum.txt','w')
         for path in self._result:
             print(path)
             result = self._result[path]
@@ -67,6 +67,32 @@ class Checker:
         file.flush()#结束之前将缓冲区内容添加到位
         file.close()
         return self
+
+def checkTheErrorFile(results):
+    for key,valueList in results.items():#results.items(),字典不能直接遍历
+        print(f"dir:{key}")
+        for listItem in valueList:
+            if listItem[1][0] == False:
+                nameOfError = listItem[0]
+                print(nameOfError)
+                
+                yield key,nameOfError #循环一次后return，再循环下一次，。yield后续用法与list相同
+
+def matchTheErrorFile (originPath,string,errorPath,NameError):
+    text = open("nameErrorList.txt",'w')
+    text.write(errorPath)
+    errorPathBaseName = os.path.basename(errorPath)
+    print(errorPathBaseName)
+    for items in os.listdir(originPath):
+        if string in items:
+            subOriginPath = os.path.join(originPath,items)
+            for dir in os.listdir(subOriginPath):
+                for file in os.listdir(os.path.join(subOriginPath,dir)):
+                    str = file.split("_")
+                    print(str[-2])
+                    if errorPathBaseName == file:
+                        text.write(f"{str[-2]} name: {NameError}\n")
+                        print(f"{str[-2]} name: {NameError}\n")
 
 
 if __name__ == "__main__":
@@ -87,9 +113,14 @@ if __name__ == "__main__":
     pathHC = r"F:\201804athletes\athletes_data\collation_201804hc" 
     pathFile = ["3DT1","3PlT2FGRE","AssetCalibration","DTI","OAxT2FLAIR","rest","run1","run2","run3","run4","ScreenSave"]
     numOfFiles = [159,18,120,4992,24,11438,4300,4300,4300,4300,3]
-
+    originPath = r"F:\201804athletes\athletes_data"
+    string = "separate"
     checker = Checker(pathFile,numOfFiles)
     results = checker.check(pathAthlete).dumps().getResult()
+    for errorPath,NameError in checkTheErrorFile(results):
+        matchTheErrorFile(originPath,string,errorPath,NameError)
+        
+    
     
 
 
