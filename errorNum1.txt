@@ -1,0 +1,37 @@
+    |_wanghaoyu match:False file number:22
+rest
+    |_fanxianqian match:False file number:11439  (ÎÞÎó£©
+    |_jianyuang match:False file number:5461  (06)£¨MRI_data2_separate£©
+    |_lijiaqi match:False file number:22876  (ÎÞ£©
+    |_lixinglin match:False file number:11172  (04)£¨MRI_data2_separate£©
+    |_sujing match:False file number:22876  (56)£¨MRI_data0623_separate£©
+    |_tieyuyan match:False file number:17329  (43)(MRI_data0613_separate)
+    |_wangpeilin match:False file number:10019  (51)(MRI_data0622_separate)
+    |_wangtao match:False file number:11704  (23)(MRI_data0529_separate)
+    |_zhanghuayu match:False file number:22876  (20)(MRI_data0515_separate)
+    |_zhangjinrui match:False file number:11439  (ÎÞÎó£©
+    |_zhongjunbo match:False file number:11172  (26)(MRI_data0529_separate)
+    |_lixinglin match:False file number:4200  (04)£¨MRI_data2_separate£©
+    |_tianhaoyuan match:False file number:5504    
+    |_wangtao match:False file number:4400
+    |_zhangyuhang match:False file number:344
+    |_zhongjunbo match:False file number:4200
+    |_zhouxiang match:False file number:43
+    |_denghaotian match:False file number:4343
+    |_liuxinyu match:False file number:8600
+    |_lixinglin match:False file number:4200
+    |_zhangyuhang match:False file number:4644
+    |_zhengyanhong match:False file number:5547
+    |_zhongjunbo match:False file number:4200
+    |_hemengqiu match:False file number:4343
+    |_jianyuang match:False file number:43
+    |_liusuhan match:False file number:4386
+    |_lixinglin match:False file number:4200
+    |_wangkai match:False file number:8600
+    |_wanglinlin match:False file number:4386
+    |_yangxinyang match:False file number:129
+    |_zhangjiayu match:False file number:8600
+    |_zhongjunbo match:False file number:4200
+    |_hemengqiu match:False file number:4429
+    |_lixinglin match:False file number:4200
+    |_zhongjunbo match:False file number:4200

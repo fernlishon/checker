@@ -1,6 +1,7 @@
-import os
+#neaten2：check the num of the files
 # 单一职责
 # 封装层次
+import os
 def checkNumOfFilesInDirs(dirPath,numOfFiles):
     fileNum = len(os.listdir(dirPath))
     if fileNum != numOfFiles:
@@ -31,6 +32,7 @@ class Checker:
         self._dirsToCheck = dirsToCheck
         self._num = num
         self._result = {}
+        
     
     def checkNumOfFilesInDirs(self,dirPath,numOfFiles):
         fileNum = len(os.listdir(dirPath))
@@ -49,12 +51,23 @@ class Checker:
             self._result[wholeDirs] = checkAllDirs(wholeDirs,numOfFile)
         return self
 
+    def getResult(self):
+        return self._result
+    
     def dumps(self):
+        file = open('F:\codes\pycodes\checker\errorNum.txt','w')
         for path in self._result:
             print(path)
             result = self._result[path]
             for r in result:
-                print(f"    |_{r[0]} match:{r[1][0]} file number:{r[1][1]}")
+                if not r[1][0]:
+                    print(f"    |_{r[0]} match:{r[1][0]} file number:{r[1][1]}")
+                    #保存到txt
+                    file.write(f"    |_{r[0]} match:{r[1][0]} file number:{r[1][1]}\n")
+        file.flush()#结束之前将缓冲区内容添加到位
+        file.close()
+        return self
+
 
 if __name__ == "__main__":
     # pathAthlete = r"F:\201804athletes\athletes_data\collation_201804ath"  
@@ -73,13 +86,12 @@ if __name__ == "__main__":
     pathAthlete = r"F:\201804athletes\athletes_data\collation_201804ath"  
     pathHC = r"F:\201804athletes\athletes_data\collation_201804hc" 
     pathFile = ["3DT1","3PlT2FGRE","AssetCalibration","DTI","OAxT2FLAIR","rest","run1","run2","run3","run4","ScreenSave"]
-    numOfFiles = [2,2,3,4,1,2,1,1,1,1,2]
+    numOfFiles = [159,18,120,4992,24,11438,4300,4300,4300,4300,3]
 
     checker = Checker(pathFile,numOfFiles)
-    checker.check(pathAthlete).dumps()
-    checker.check(pathHC).dumps()
+    results = checker.check(pathAthlete).dumps().getResult()
+    
 
-    # dumps(check(pathFile,numOfFiles,pathAthlete))
-    # dumps(check(pathFile,numOfFiles,pathHC))
 
-    # 我更改了
+
+    
