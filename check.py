@@ -81,3 +81,5 @@ if __name__ == "__main__":
 
     # dumps(check(pathFile,numOfFiles,pathAthlete))
     # dumps(check(pathFile,numOfFiles,pathHC))
+
+    # 我更改了
