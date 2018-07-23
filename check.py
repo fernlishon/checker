@@ -79,12 +79,13 @@ def checkTheErrorFile(results):
                 
 
 def matchTheErrorFile (originPath,string,errorDir,NameError):
-    text = open('nameErrorList.txt','w')
+    text = open('nameErrorList.txt','a')#追加模式"a",写模式"w",读模式"r" 未报错，但是文档为空白的，无任何东西，是因为在循环中，如果使用text = open('nameErrorList.txt','w')则是循环写入一条语句，就会依次覆盖原内容。
     for file in os.listdir(originPath):
         str = file.split("_")
         if NameError == str[-1]:
             print(f"origin Path:{originPath},  num:{str[-2]},  name: {NameError}")
-            text.write(f"origin Path:{originPath},  num:{str[-2]},  name: {NameError}\n")     
+            text.write(f"origin Path:{originPath},  num:{str[-2]},  name: {NameError}\n")
+            
     text.flush()
     text.close()#使用text = open('.txt')打开后必须关闭text.close()，才能写入内容；使用with open则不需要
 
