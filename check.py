@@ -31,8 +31,7 @@ class Checker:
     def __init__(self,dirsToCheck,num):
         self._dirsToCheck = dirsToCheck
         self._num = num
-        self._result = {}
-        
+        self._result = {} 
     
     def checkNumOfFilesInDirs(self,dirPath,numOfFiles):
         fileNum = len(os.listdir(dirPath))
@@ -85,8 +84,7 @@ def matchTheErrorFile (originPath,string,errorDir,NameError):
         str = file.split("_")
         if NameError == str[-1]:
             print(f"origin Path:{originPath},  num:{str[-2]},  name: {NameError}")
-            text.write(f"origin Path:{originPath},  num:{str[-2]},  name: {NameError}\n")
-            
+            text.write(f"origin Path:{originPath},  num:{str[-2]},  name: {NameError}\n")     
     text.flush()
     text.close()#使用text = open('.txt')打开后必须关闭text.close()，才能写入内容；使用with open则不需要
 
