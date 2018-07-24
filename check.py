@@ -58,6 +58,7 @@ class Checker:
         file = open('errorNum.txt','w')
         for path in self._result:
             print(path)
+            file.write(f"{path}\n")
             result = self._result[path]
             for r in result:
                 if not r[1][0]:
@@ -111,7 +112,7 @@ if __name__ == "__main__":
     pathAthlete = r"F:\201804athletes\athletes_data\collation_201804ath"  
     pathHC = r"F:\201804athletes\athletes_data\collation_201804hc" 
     pathFile = ["3DT1","3PlT2FGRE","AssetCalibration","DTI","OAxT2FLAIR","rest","run1","run2","run3","run4","ScreenSave"]
-    numOfFiles = [1,2,120,4992,24,11438,4300,4300,4300,4300,3]
+    numOfFiles = [159,18,120,4992,24,11438,4300,4300,4300,4300,3]
     originPath = r"F:\201804athletes\athletes_data"
     string = "separate"
     checker = Checker(pathFile,numOfFiles)
